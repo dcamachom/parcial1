@@ -5,7 +5,7 @@ import Footer from './Footer';
 
 function PageLogin(){
     return (
-    <div>
+    <div style={{alignItems:'center'}}>
       <Header />
       <Login />
       <Footer />

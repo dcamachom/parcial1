@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {FormattedMessage} from 'react-intl';
 
 function CarDetail({ carId }) {
   const [carDetail, setCarDetail] = useState(null);
@@ -22,12 +23,12 @@ function CarDetail({ carId }) {
   }
 
   return (
-    <div style={{ border: '2px solid #ccc', borderRadius: '5px', padding: '20px', width: '427px',backgroundColor:'#D9D9D9', height:'351px' }}>
-      <h2>{carDetail.marca} {carDetail.linea}</h2>
-      <img src={carDetail.imagen} alt={carDetail.marca} style={{ maxWidth: '100%', height: 'auto' }} />
-      <p>Kilometraje: {carDetail.kilometraje}</p>
-      <p>Color: {carDetail.color}</p>
-      <p>Referencia: {carDetail.referencia}</p>
+    <div style={{ border: '1px solid black', padding: '20px', width: '400px', height:'300px', backgroundColor:'#D9D9D9', marginLeft:'30px' }}>
+      <h2 style={{marginTop:'-10px', fontSize:'18px'}}>{carDetail.marca} {carDetail.linea}</h2>
+      <img src={carDetail.imagen} alt={carDetail.marca} style={{ maxwidth: '318px', height: '159px', marginTop:'10px' }} />
+      <p style={{ textAlign: 'left', paddingLeft: '30px',fontSize:'18px' }}><span style={{ fontSize: '24px' }}>&#8594;</span><FormattedMessage id="Kilometraje"/>{carDetail.kilometraje}</p>
+      <p style={{ textAlign: 'left', paddingLeft: '30px',fontSize:'18px',marginTop:'-30px' }}><span style={{ fontSize: '24px' }}>&#8594;</span><FormattedMessage id="Color"/> {carDetail.color}</p>
+      <p style={{ textAlign: 'left', paddingLeft: '30px',fontSize:'18px',marginTop:'-30px'}}><span style={{ fontSize: '24px' }}>&#8594;</span><FormattedMessage id="Referencia"/> {carDetail.referencia}</p>
     </div>
   );
 }
