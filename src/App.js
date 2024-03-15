@@ -1,24 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import { IntlProvider } from 'react-intl';
+import React, { useState, useEffect } from 'react';
+import PageLogin from './components/PageLogin';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PageCarTable from './components/PageCarTable';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<PageLogin />} />
+      <Route path="/cars" element={<PageCarTable />} />
+    </Routes>
+    </BrowserRouter>
   );
 }
 
